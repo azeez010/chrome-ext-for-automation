@@ -1,0 +1,31 @@
+{
+  "name": "Dataslid Tech 49ja bot",
+  "version": "2.0",
+  "description": "Play 49Balls right in your browser",
+  "permissions": ["tabs", "activeTab", "storage", "https://dataslid.pythonanywhere.com/*"],
+  "background": {
+    "scripts": ["./js/script.js"],
+    "persistent": true
+  },
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'",
+  "content_scripts": [
+  {
+    "matches": [
+      "https://logigames.bet9ja.com/Games/*"
+    ],
+    "js": ["./js/content.js", "./js/jquery-3.2.1.min.js"]
+  }
+],
+  "web_accessible_resources":["manipulator.js"],
+  "browser_action": {
+      "default_icon": {                    
+          "192": "icons/logo2.png"
+        },
+        "default_title": "Dataslid Tech 49ja bot",
+        "default_popup": "index.html"
+      },
+  "icons": {
+      "192": "icons/logo2.png"
+  },
+  "manifest_version": 2
+}
